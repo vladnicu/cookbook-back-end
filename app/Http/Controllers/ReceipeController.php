@@ -40,7 +40,7 @@ class ReceipeController extends Controller
 
     public function update(UpdateReceipeRequest $request, Receipe $receipe) {
 
-        $receipe->title = $request->get('name', $receipe->title); //keep the same value if the value isn't provided
+        $receipe->title = $request->get('title', $receipe->title); //keep the same value if the value isn't provided
 
         $receipe->save();
 

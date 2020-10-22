@@ -21,7 +21,7 @@ class ReceipeResource extends JsonResource
             'difficulty' => $this->difficulty,
             'prep_time' => $this->prep_time,
             'cook_time' => $this->cook_time,
-            'user' => $this->user,
+            'user' => new UserResource($this->user),
         ];
     }
 }
