@@ -19,8 +19,7 @@ class CreateReceipesTable extends Migration
             $table->text('description')->nullable();
             $table->unsignedSmallInteger('serves')->nullable();
             $table->string('difficulty')->nullable();
-            $table->unsignedInteger('prep_time')->nullable();
-            $table->unsignedInteger('cook_time')->nullable();
+            $table->unsignedInteger('total_time')->nullable();
             $table->timestamps();
 
             $table->foreignId('user_id')->constrained()->onDelete('cascade');

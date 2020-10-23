@@ -28,8 +28,7 @@ class StoreReceipeRequest extends FormRequest
             'description' => 'max:255',
             'serves' =>  'max:255',
             'difficulty' => 'max:255',
-            'prep_time' => 'required',
-            'cook_time' => 'required'
+            'total_time' => 'required',
         ];
     }
 }
