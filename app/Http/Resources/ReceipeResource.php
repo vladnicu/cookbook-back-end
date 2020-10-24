@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Ingredient;
+use App\Models\Step;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ReceipeResource extends JsonResource
@@ -15,13 +17,15 @@ class ReceipeResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'title' => $this->title,
             'description' => $this->description,
             'serves' => $this->serves,
             'difficulty' => $this->difficulty,
-            'prep_time' => $this->prep_time,
-            'cook_time' => $this->cook_time,
+            'total_time' => $this->total_time,
             'user' => new UserResource($this->user),
+            'ingredients' => IngredientResource::collection(Ingredient::all()),
+            'steps' => StepResource::collection(Step::all())
         ];
     }
 }

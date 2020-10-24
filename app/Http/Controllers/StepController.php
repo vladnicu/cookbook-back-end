@@ -13,7 +13,7 @@ class StepController extends Controller
 {
     public function store(StoreStepRequest $request, Receipe $receipe) {
         $step = new Step();
-        $step->name = $request->name;
+        $step->text = $request->text;
    
 
         $receipe->steps()->save($step);
@@ -28,7 +28,7 @@ class StepController extends Controller
 
     public function update(UpdateStepRequest $request, Receipe $receipe, Step $step) {
 
-        $step->name = $request->get('name', $step->name); //keep the same value if the value isn't provided
+        $step->text = $request->get('text', $step->text); //keep the same value if the value isn't provided
         $step->save();
 
         return new StepResource($step);

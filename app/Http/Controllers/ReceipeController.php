@@ -34,7 +34,7 @@ class ReceipeController extends Controller
     }
 
     public function show(Receipe $receipe) {
-        return new $receipe;
+        return new ReceipeResource($receipe);
     }
 
 

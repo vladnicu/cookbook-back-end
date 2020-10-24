@@ -14,8 +14,7 @@ class Receipe extends Model
         'description',
         'serves',
         'difficulty',
-        'prep_time',
-        'cook_time'
+        'total_time',
     ];
 
     public function user() {
@@ -25,8 +24,16 @@ class Receipe extends Model
     // TODO trebuie sa fac cast si la created at daca il returnez?
     protected $casts = [
         'serves' => 'integer',
-        'prep_time' => 'integer',
-        'cook_time' => 'integer',
+        'total_time' => 'integer',
     ];
+
+
+    public function ingredients() {
+        return $this->hasMany(Ingredient::class);
+    }
+
+    public function steps() {
+        return $this->hasMany(Step::class);
+    }
 
 }

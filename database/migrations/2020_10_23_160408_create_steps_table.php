@@ -17,6 +17,8 @@ class CreateStepsTable extends Migration
             $table->id();
             $table->text('text');
             $table->timestamps();
+
+            $table->foreignId('receipe_id')->constrained()->onDelete('cascade');
         });
     }
 

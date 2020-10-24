@@ -12,4 +12,8 @@ class Ingredient extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function receipe() {
+        return $this->belongsTo(Receipe::class);
+    }
 }

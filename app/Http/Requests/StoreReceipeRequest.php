@@ -28,7 +28,6 @@ class StoreReceipeRequest extends FormRequest
             'description' => 'max:255',
             'serves' =>  'max:255',
             'difficulty' => 'max:255',
-            'total_time' => 'required',
         ];
     }
 }

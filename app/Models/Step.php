@@ -12,4 +12,9 @@ class Step extends Model
     protected $fillable = [
         'text'
     ];
+
+    public function receipe() {
+        return $this->belongsTo(Receipe::class);
+    }
+
 }
