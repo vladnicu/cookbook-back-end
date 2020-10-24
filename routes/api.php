@@ -3,6 +3,7 @@
 use App\Http\Controllers\IngredientController;
 use App\Http\Controllers\ReceipeController;
 use App\Http\Controllers\StepController;
+use App\Http\Controllers\TagController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -43,4 +44,12 @@ Route::group(['prefix' => 'receipes'], function () {
         Route::patch('/{step}', [StepController::class, 'update']);
         Route::delete('/{step}', [StepController::class, 'delete']);
     });
+});
+
+Route::group(['prefix' => 'tags'], function () {
+    Route::get('/', [TagController::class, 'index']);
+    Route::get('/{tag}', [TagController::class, 'show']);
+    Route::post('/', [TagController::class, 'store']);
+    Route::patch('/{tag}', [TagController::class, 'update']);
+    Route::delete('/{tag}', [TagController::class, 'delete']);
 });
