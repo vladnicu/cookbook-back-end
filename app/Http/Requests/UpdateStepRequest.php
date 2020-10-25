@@ -24,7 +24,7 @@ class UpdateStepRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'text' => 'min:1|max:2000',
         ];
     }
 }

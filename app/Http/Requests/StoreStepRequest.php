@@ -24,7 +24,7 @@ class StoreStepRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'text' => 'required|min:1|max:2000',
         ];
     }
 }

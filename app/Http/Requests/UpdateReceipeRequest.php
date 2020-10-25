@@ -24,7 +24,11 @@ class UpdateReceipeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'min:1|max:255',
+            'description' => 'min:1|max:2000',
+            'difficulty' => 'min:1|max:255',
+            'serves' =>  'integer',
+            'total_time' => 'integer'
         ];
     }
 }

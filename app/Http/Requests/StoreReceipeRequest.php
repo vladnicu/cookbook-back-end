@@ -23,11 +23,12 @@ class StoreReceipeRequest extends FormRequest
      */
     public function rules()
     {
-        return [ // TODO finish all validations, description how long?
-            'title' => 'required|max:255',
-            'description' => 'max:255',
-            'serves' =>  'max:255',
-            'difficulty' => 'max:255',
+        return [
+            'title' => 'required|min:1|max:255',
+            'description' => 'min:1|max:2000',
+            'difficulty' => 'min:1|max:255',
+            'serves' =>  'integer',
+            'total_time' => 'integer'
         ];
     }
 }
