@@ -32,6 +32,16 @@ class ReceipeController extends Controller
 
         $receipe->save();
 
+        foreach ($request->ingredients as $ingredient) {
+            $receipe->ingredients()->create([ 'name' => $ingredient]);
+        }
+
+        foreach ($request->steps as $step) {
+            $receipe->steps()->create([ 'text' => $step]);
+        }
+
+        $receipe->tags()->attach($request->tags);
+
         return new ReceipeResource($receipe);
     }
 

@@ -25,9 +25,9 @@ class ReceipeResource extends JsonResource
             'difficulty' => $this->difficulty,
             'total_time' => $this->total_time,
             'user' => new UserResource($this->user),
-            'ingredients' => IngredientResource::collection(Ingredient::all()),
-            'steps' => StepResource::collection(Step::all()),
-            'tags' => TagResource::collection(Tag::all())
+            'ingredients' => IngredientResource::collection($this->ingredients),
+            'steps' => StepResource::collection($this->steps),
+            'tags' => TagResource::collection($this->tags)
         ];
     }
 }
