@@ -36,4 +36,8 @@ class Receipe extends Model
         return $this->hasMany(Step::class);
     }
 
+    public function tags() {
+        return $this->belongsToMany(Tag::class);
+    }
+
 }

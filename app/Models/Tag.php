@@ -12,4 +12,8 @@ class Tag extends Model
     public function user() {
         return $this->belongsTo(User::class);
     }
+
+    public function receipes() {
+        return $this->belongsToMany(Receipe::class);
+    }
 }

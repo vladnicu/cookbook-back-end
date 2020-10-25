@@ -28,6 +28,8 @@ class ReceipeController extends Controller
         $user = User::find($request->user);
         $receipe->user()->associate($user);
 
+        // $tag->user()->associate($request->user());
+
         $receipe->save();
 
         return new ReceipeResource($receipe);
